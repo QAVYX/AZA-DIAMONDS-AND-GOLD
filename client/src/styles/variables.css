@@ -1,0 +1,46 @@
+/* ==========================================================================
+   AZA DIAMONDS & GOLD — DESIGN SYSTEM VARIABLES
+   ========================================================================== */
+
+:root {
+  /* Brand Color Tokens */
+  --color-primary: #01271B;         /* Primary Royal Emerald */
+  --color-dark: #00140D;            /* Ground Dark */
+  --color-secondary: #0F4A38;       /* Light Vibrant Emerald */
+  --color-emerald-mid: #063326;     /* Deep Transition Emerald */
+  --color-bg: #F8FFFC;              /* Light Soft Mint Background */
+  --color-accent-gold: #D8B46A;     /* Champagne Micro Accent Gold */
+  --color-light-gold: #E8D7B5;      /* Light Gold Accent */
+  --color-silver-light: #F3F6F7;    /* Luxury Silver Accent */
+  --color-text-dark: #1E1E1E;       /* Text Dark */
+  --color-text-muted: #4A6359;      /* Muted Text */
+  --color-text-light: #E2FAF0;      /* Light Text on Dark */
+  --color-white: #FFFFFF;
+
+  /* Harmonized Emerald Luxury Gradient */
+  --gradient-emerald-luxury: linear-gradient(180deg, #0F4A38 0%, #063326 50%, #01271B 100%);
+
+  /* Glassmorphism Tokens */
+  --glass-bg: rgba(1, 39, 27, 0.75);
+  --glass-border: rgba(216, 180, 106, 0.25);
+  --glass-shadow: 0 20px 50px rgba(0, 20, 13, 0.35);
+
+  /* Layout & Container Grid */
+  --container-max-width: 1280px;
+  --section-spacing-lg: 120px;
+  --section-spacing-md: 80px;
+  --section-spacing-sm: 48px;
+  --grid-gap: 32px;
+  --card-radius: 22px;
+  --button-radius: 9999px;
+  --badge-radius: 9999px;
+
+  /* Shadows */
+  --shadow-soft: 0 16px 40px rgba(1, 39, 27, 0.06);
+  --shadow-hover: 0 24px 60px rgba(1, 39, 27, 0.14);
+  --shadow-gold-glow: 0 10px 30px rgba(216, 180, 106, 0.25);
+
+  /* Transitions */
+  --transition-fast: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}

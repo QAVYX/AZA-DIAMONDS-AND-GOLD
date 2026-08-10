@@ -1,0 +1,12 @@
+/* ==========================================================================
+   AZA DIAMONDS & GOLD — CLEAN LUXURY UTILITIES
+   ========================================================================== */
+
+/* Clean luxury subtle glow without busy repeating tile patterns */
+.luxury-glow {
+  background: radial-gradient(circle, rgba(216, 180, 106, 0.12) 0%, transparent 70%);
+}
+
+.luxury-ambient-glow {
+  background: radial-gradient(ellipse at center, rgba(216, 180, 106, 0.08) 0%, transparent 70%);
+}

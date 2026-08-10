@@ -1,0 +1,15 @@
+{
+  "short_name": "AZA Jewellery",
+  "name": "AZA Diamonds & Gold - Luxury Fine Jewellery",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#00140D",
+  "theme_color": "#01271B",
+  "display": "standalone"
+}

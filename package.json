@@ -1,0 +1,11 @@
+{
+  "name": "aza-diamonds-gold-monorepo",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "npm --prefix client run dev",
+    "dev:client": "node client/node_modules/vite/bin/vite.js --config client/vite.config.js",
+    "dev:server": "node server/server.js",
+    "build:client": "node client/node_modules/vite/bin/vite.js build --config client/vite.config.js"
+  }
+}

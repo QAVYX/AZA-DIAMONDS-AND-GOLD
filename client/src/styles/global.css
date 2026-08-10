@@ -1,0 +1,102 @@
+@import "tailwindcss";
+@import "./utilities.css";
+@import "./typography.css";
+
+@theme {
+  --color-primary-emerald: #01271B;
+  --color-dark-bg: #00140D;
+  --color-secondary-green: #0F4A38;
+  --color-mint-bg: #F8FFFC;
+  --color-gold-accent: #D8B46A;
+  --color-gold-dark: #C49A4D;
+  --color-gold-light: #E8D7B5;
+  --color-text-dark: #1E1E1E;
+  
+  /* Strict Global Typography Hierarchy: Cormorant Garamond (Serif Display) + Manrope (Clean UI & Body) */
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Manrope', system-ui, -apple-system, sans-serif;
+  --font-body: 'Manrope', system-ui, -apple-system, sans-serif;
+  --font-manrope: 'Manrope', system-ui, -apple-system, sans-serif;
+  --font-montserrat: 'Manrope', system-ui, -apple-system, sans-serif;
+  --font-mango: 'Cormorant Garamond', Georgia, serif;
+  --font-highlight: 'Cormorant Garamond', Georgia, serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-body);
+    background-color: #F8FFFC;
+    color: #1E1E1E;
+    overflow-x: hidden;
+    width: 100%;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+    min-height: 100vh;
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Lock scrolling when modals or mobile drawers are open */
+  body.overflow-hidden {
+    overflow: hidden !important;
+    touch-action: none;
+  }
+
+  #root {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  /* Headings default to elegant serif typography */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+    font-weight: 500;
+  }
+
+  /* Prevent iOS Safari auto-zoom on form inputs */
+  input, select, textarea {
+    font-size: 16px !important;
+    font-family: var(--font-body);
+  }
+}
+
+/* Safari WebKit Backdrop Filter Polyfill Utilities */
+.backdrop-blur-xl {
+  -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(24px);
+}
+
+.backdrop-blur-2xl {
+  -webkit-backdrop-filter: blur(40px);
+  backdrop-filter: blur(40px);
+}
+
+.backdrop-blur-md {
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+.backdrop-blur-sm {
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+
+/* Safari WebKit GPU Acceleration Fix to Prevent Animation Flicker */
+* {
+  -webkit-font-smoothing: antialiased;
+}
+
+img, video {
+  -webkit-user-drag: none;
+}
