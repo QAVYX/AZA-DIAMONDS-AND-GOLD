@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiHeart, FiShoppingCart, FiArrowRight } from 'react-icons/fi';
 import Container from '@/components/common/Container';
@@ -24,6 +24,16 @@ import gold18kChainImg from '@/assets/images/gold18k_chain_emerald.png';
 import gold18kHoopsImg from '@/assets/images/gold18k_hoops_emerald.png';
 import gold18kPendantImg from '@/assets/images/gold18k_pendant_emerald.png';
 import gold18kBraceletImg from '@/assets/images/gold18k_bracelet_emerald.png';
+
+import gold9kRingImg from '@/assets/images/gold9k_ring_emerald.png';
+import gold9kPendantImg from '@/assets/images/gold9k_pendant_emerald.png';
+import gold9kEarringsImg from '@/assets/images/gold9k_earrings_emerald.png';
+import gold9kBraceletImg from '@/assets/images/gold9k_bracelet_emerald.png';
+
+import platRingImg from '@/assets/images/plat_ring_emerald.png';
+import platBandImg from '@/assets/images/plat_band_emerald.png';
+import platPendantImg from '@/assets/images/plat_pendant_emerald.png';
+import platEarringsImg from '@/assets/images/plat_earrings_emerald.png';
 
 // Complete product dataset for Collections Catalog
 const allProductsList = [
@@ -187,22 +197,140 @@ const allProductsList = [
     categoryTag: '18K Gold Fine Jewelry',
     goldPurity: '18K BIS Hallmarked Gold',
     diamondGrade: 'Modern Lightweight Gold'
+  },
+
+  // 9K GOLD
+  {
+    id: 'g9-ring-1',
+    name: 'Curved Diamond Band Ring',
+    subTitle: '9K Gold & Diamond',
+    description: 'Chic 9K yellow gold stackable ring featuring sparkling diamond accents designed for daily elegance.',
+    price: '₹ 18,900',
+    numericPrice: 18900,
+    image: gold9kRingImg,
+    categoryKey: '9k-gold',
+    categoryTag: '9K Gold & Diamond',
+    goldPurity: '9K Hallmarked Gold',
+    diamondGrade: 'Accent Diamond Band'
+  },
+  {
+    id: 'g9-pendant-1',
+    name: 'Petite Heart Gold Pendant',
+    subTitle: '9K Gold & Diamond',
+    description: 'Dainty 9K yellow gold heart pendant necklace, lightweight and perfect for everyday gifting.',
+    price: '₹ 15,400',
+    numericPrice: 15400,
+    image: gold9kPendantImg,
+    categoryKey: '9k-gold',
+    categoryTag: '9K Gold & Diamond',
+    goldPurity: '9K Hallmarked Gold',
+    diamondGrade: 'Lightweight Fine Diamond'
+  },
+  {
+    id: 'g9-earrings-1',
+    name: 'Twisted Gold Stud Earrings',
+    subTitle: '9K Gold Fine Jewelry',
+    description: 'Minimalist 9K yellow gold twisted stud earrings crafted for subtle charm.',
+    price: '₹ 14,200',
+    numericPrice: 14200,
+    image: gold9kEarringsImg,
+    categoryKey: '9k-gold',
+    categoryTag: '9K Gold Fine Jewelry',
+    goldPurity: '9K Hallmarked Gold',
+    diamondGrade: 'Modern Daily Wear'
+  },
+  {
+    id: 'g9-bracelet-1',
+    name: 'Delicate Charm Bracelet',
+    subTitle: '9K Gold Fine Jewelry',
+    description: 'Elegant 9K yellow gold chain link bracelet designed for subtle wrist radiance.',
+    price: '₹ 19,800',
+    numericPrice: 19800,
+    image: gold9kBraceletImg,
+    categoryKey: '9k-gold',
+    categoryTag: '9K Gold Fine Jewelry',
+    goldPurity: '9K Hallmarked Gold',
+    diamondGrade: 'Modern Daily Wear'
+  },
+
+  // PLATINUM
+  {
+    id: 'plat-ring-1',
+    name: 'Classic Solitaire Platinum Ring',
+    subTitle: 'Pure Platinum Pt950',
+    description: 'Timeless solitaire diamond engagement ring set in certified pure Pt950 platinum with a brilliant round center diamond.',
+    price: '₹ 68,500',
+    numericPrice: 68500,
+    image: platRingImg,
+    categoryKey: 'platinum',
+    categoryTag: 'Pure Platinum Pt950',
+    goldPurity: 'Pt950 Certified Platinum',
+    diamondGrade: 'Certified Solitaire Diamond'
+  },
+  {
+    id: 'plat-band-1',
+    name: 'Pavé Diamond Platinum Band',
+    subTitle: 'Pure Platinum Pt950',
+    description: 'Lustrous Pt950 platinum band studded with precision pavé set diamonds for sophisticated brilliance.',
+    price: '₹ 52,000',
+    numericPrice: 52000,
+    image: platBandImg,
+    categoryKey: 'platinum',
+    categoryTag: 'Pure Platinum Pt950',
+    goldPurity: 'Pt950 Certified Platinum',
+    diamondGrade: 'Pavé Set Diamond Line'
+  },
+  {
+    id: 'plat-pendant-1',
+    name: 'Celeste Platinum Pendant',
+    subTitle: 'Pure Platinum Pt950',
+    description: 'Minimalist Pt950 platinum solitaire pendant necklace designed for enduring purity and grace.',
+    price: '₹ 44,900',
+    numericPrice: 44900,
+    image: platPendantImg,
+    categoryKey: 'platinum',
+    categoryTag: 'Pure Platinum Pt950',
+    goldPurity: 'Pt950 Certified Platinum',
+    diamondGrade: 'Solitaire Drop Diamond'
+  },
+  {
+    id: 'plat-earrings-1',
+    name: 'Platinum Solitaire Studs',
+    subTitle: 'Pure Platinum Pt950',
+    description: 'Understated luxury solitaire diamond stud earrings crafted in hypoallergenic Pt950 platinum.',
+    price: '₹ 58,400',
+    numericPrice: 58400,
+    image: platEarringsImg,
+    categoryKey: 'platinum',
+    categoryTag: 'Pure Platinum Pt950',
+    goldPurity: 'Pt950 Certified Platinum',
+    diamondGrade: 'VVS-EF Solitaire Diamonds'
   }
 ];
 
 export const CollectionsPage = () => {
-  const [activeFilter, setActiveFilter] = useState('all');
+  const [searchParams] = useSearchParams();
+  const filterParam = searchParams.get('filter');
+  const [activeFilter, setActiveFilter] = useState(filterParam || 'all');
   const [selectedProduct, setSelectedProduct] = useState(null);
   const navigate = useNavigate();
   const { addToCart } = useCart();
   const { toggleWishlist, isInWishlist, showToast } = useWishlist();
 
-  // 4 Category Filter Tabs as requested by user
+  useEffect(() => {
+    if (filterParam) {
+      setActiveFilter(filterParam);
+    }
+  }, [filterParam]);
+
+  // 6 Category Filter Tabs
   const filterTabs = [
     { id: 'all', label: 'ALL COLLECTIONS' },
     { id: '18k-diamond', label: '18K DIAMOND' },
     { id: '22k-gold', label: '22K GOLD' },
-    { id: '18k-gold', label: '18K GOLD' }
+    { id: '18k-gold', label: '18K GOLD' },
+    { id: '9k-gold', label: '9K GOLD' },
+    { id: 'platinum', label: 'PLATINUM' }
   ];
 
   const handleWishlistClick = (e, product) => {
