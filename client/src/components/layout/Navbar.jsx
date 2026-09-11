@@ -62,8 +62,8 @@ export const Navbar = () => {
                 alt="AZA Diamonds & Gold Official Logo"
                 className={`w-auto object-contain transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.02] ${
                   scrolled
-                    ? 'h-[40px] xs:h-[46px] sm:h-[54px] lg:h-[68px]'
-                    : 'h-[46px] xs:h-[52px] sm:h-[62px] lg:h-[78px]'
+                    ? 'h-[50px] xs:h-[56px] sm:h-[54px] lg:h-[68px]'
+                    : 'h-[58px] xs:h-[66px] sm:h-[62px] lg:h-[78px]'
                 }`}
               />
             </Link>
