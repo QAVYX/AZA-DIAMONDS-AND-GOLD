@@ -10,6 +10,7 @@ import showcase18kDiamond from '@/assets/images/aza_showcase_18k_diamond.jpg';
 import showcase22kGold from '@/assets/images/aza_showcase_22k_gold.jpg';
 import showcase9kGold from '@/assets/images/aza_showcase_9k_gold.png';
 import showcasePlatinum from '@/assets/images/aza_showcase_platinum.png';
+import showcaseTimelessElegance from '@/assets/images/aza_showcase_timeless_elegance.png';
 
 export const ProductShowcase = () => {
   const collectionCards = [
@@ -129,8 +130,8 @@ export const ProductShowcase = () => {
               Discover our exclusive range of gold and diamond jewellery, crafted with precision and passion for every special moment.
             </motion.p>
 
-            {/* CTA Button with Arrow */}
-            <motion.div variants={itemVariants}>
+            {/* CTA Button with Arrow (Desktop Only - on Mobile it is placed in the 6th grid card slot below) */}
+            <motion.div variants={itemVariants} className="hidden lg:block">
               <Link
                 to="/collections"
                 className="group inline-flex items-center justify-center px-6 sm:px-7 py-3 border border-white/80 text-white font-sans font-semibold text-[10.5px] sm:text-xs tracking-[2px] uppercase rounded-md hover:bg-white hover:text-[#01271B] transition-all duration-300 no-underline shadow-sm cursor-pointer"
@@ -148,7 +149,7 @@ export const ProductShowcase = () => {
             </motion.div>
           </motion.div>
 
-          {/* RIGHT COLUMN: 5 Luxury Collection Cards displaying in a single horizontal row on desktop */}
+          {/* RIGHT COLUMN: 5 Luxury Collection Cards on Desktop, 6 Grid Items (5 Cards + 1 Promo Card) on Mobile */}
           <motion.div
             className="lg:col-span-8 xl:col-span-9 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3.5 sm:gap-4 lg:gap-3 xl:gap-4 mt-4 lg:mt-0"
             variants={containerVariants}
@@ -188,6 +189,57 @@ export const ProductShowcase = () => {
                 </Link>
               </motion.div>
             ))}
+
+            {/* 6th Slot Card (MOBILE ONLY): Fills the empty gap in the 2-column mobile grid with luxury image card */}
+            <motion.div
+              variants={itemVariants}
+              whileHover={{ y: -6 }}
+              transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+              className="lg:hidden group flex flex-col justify-between cursor-pointer w-full"
+            >
+              <Link to="/collections" className="block w-full h-full no-underline">
+                <div className="relative w-full aspect-[3/3.8] rounded-xl sm:rounded-2xl border border-white/30 group-hover:border-[#D8B46A] bg-[#00170F] overflow-hidden shadow-[0_10px_25px_rgba(0,0,0,0.45)] group-hover:shadow-[0_20px_45px_rgba(0,0,0,0.7)] transition-all duration-300">
+                  {/* Luxury Background Image (Emerald Velvet & Flowers) */}
+                  <img
+                    src={showcaseTimelessElegance}
+                    alt="AZA Timeless Elegance"
+                    className="absolute inset-0 w-full h-full object-cover object-center select-none transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-106"
+                  />
+                  {/* Dark Emerald Gradient Overlay for Text Legibility */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#00170F] via-[#00170F]/50 to-[#00170F]/20 pointer-events-none" />
+
+                  {/* Card Content Overlay */}
+                  <div className="relative z-10 p-4 xs:p-4.5 sm:p-5 flex flex-col justify-between h-full w-full">
+                    {/* Top Text Content */}
+                    <div className="pt-0.5">
+                      <h3 className="font-serif text-base xs:text-lg sm:text-xl font-semibold text-[#D8B46A] tracking-[0.08em] leading-[1.18] uppercase mb-1 drop-shadow-sm">
+                        TIMELESS<br />ELEGANCE
+                      </h3>
+                      <p className="font-serif italic text-white/95 text-[11px] xs:text-xs sm:text-sm font-normal leading-snug mb-2 drop-shadow-sm">
+                        Crafted for<br />Every Moment
+                      </p>
+                      {/* Small Gold Divider */}
+                      <div className="w-8 sm:w-10 h-[1.5px] bg-[#D8B46A]" />
+                    </div>
+
+                    {/* Bottom Action Button */}
+                    <div className="mt-auto pt-2">
+                      <div className="inline-flex items-center justify-center w-full px-3 py-2 sm:py-2.5 border border-[#D8B46A] bg-[#00170F]/60 backdrop-blur-xs text-[#D8B46A] group-hover:bg-[#D8B46A] group-hover:text-[#00170F] font-sans font-semibold text-[9px] xs:text-[9.5px] sm:text-[10.5px] tracking-[1.5px] uppercase rounded-md transition-all duration-300 shadow-sm">
+                        <span>EXPLORE MORE</span>
+                        <svg
+                          className="w-3 h-3 ml-1.5 transition-transform duration-300 group-hover:translate-x-1"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
           </motion.div>
 
         </div>
