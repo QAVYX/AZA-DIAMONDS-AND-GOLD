@@ -182,13 +182,13 @@ export const Footer = () => {
                 FOR ENQUIRIES & APPOINTMENTS
               </span>
               <a
-                href="tel:+919847555916"
+                href="tel:+919169163234"
                 className="font-sans font-semibold text-sm sm:text-base text-white hover:text-white/90 transition-colors no-underline inline-flex items-center gap-3 group"
               >
                 <div className="w-8 h-8 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-white group-hover:bg-white group-hover:text-[#00140D] transition-colors shrink-0">
                   <FaPhoneAlt className="text-xs" />
                 </div>
-                <span>+91 98475 55916</span>
+                <span>+91 9169163234</span>
               </a>
             </div>
           </div>
