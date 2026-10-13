@@ -96,8 +96,8 @@ export const ContactPage = () => {
                   Call & Inquiry
                 </h3>
 
-                <a href="tel:+919847555916" className="font-sans text-base sm:text-lg font-bold text-[#062B1E] hover:text-[#C5A059] transition-colors no-underline block mb-2">
-                  +91 98475 55916
+                <a href="tel:+919169163234" className="font-sans text-base sm:text-lg font-bold text-[#062B1E] hover:text-[#C5A059] transition-colors no-underline block mb-2">
+                  +91 9169163234
                 </a>
 
                 <div className="inline-flex items-center gap-1.5 text-[11px] text-gray-500 font-medium mb-3 bg-[#FAF5EC] px-3 py-1 rounded-full border border-[#C5A059]/30">
@@ -107,7 +107,7 @@ export const ContactPage = () => {
               </div>
 
               <a
-                href="tel:+919847555916"
+                href="tel:+919169163234"
                 className="w-full bg-[#062B1E] hover:bg-[#042A20] text-white rounded-xl py-3 font-sans font-bold text-xs tracking-wider uppercase inline-flex items-center justify-center gap-2 transition-all no-underline shadow-sm group/btn border border-[#C5A059]/30 mt-3"
               >
                 <FaPhoneAlt className="text-[11px] text-white group-hover/btn:scale-110 transition-transform" />
